@@ -7,6 +7,9 @@ export interface GoogleOAuthVerifyRegistrationRequest {
 export interface DiscordOAuthVerifyRegistrationRequest {
 	accessToken: string;
 }
+export interface DAuthVerifyRegistrationRequest {
+	jwt: string;
+}
 
 export interface AuthMethodVerifyRegistrationResponse {
 	requestId?: string;
