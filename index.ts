@@ -62,7 +62,7 @@ import {
 	walletVerifyToFetchPKPsHandler,
 } from "./routes/auth/wallet";
 import config from "./config";
-import { dAuthVerifyToMintHandler } from "./routes/auth/dauth_google";
+import { dAuthVerifyToFetchPKPsHandler, dAuthVerifyToMintHandler } from "./routes/auth/dauth_google";
 
 const app = express();
 
@@ -333,7 +333,7 @@ app.post("/auth/wallet", walletVerifyToMintHandler);
 
 // --- Fetch PKPs tied to authorized account
 app.post("/auth/google/userinfo", googleOAuthVerifyToFetchPKPsHandler);
-app.post("/auth/google_dauth/userinfo", dAuthVerifyToMintHandler);
+app.post("/auth/google_dauth/userinfo", dAuthVerifyToFetchPKPsHandler);
 
 app.post("/auth/discord/userinfo", discordOAuthVerifyToFetchPKPsHandler);
 app.post("/auth/wallet/userinfo", walletVerifyToFetchPKPsHandler);

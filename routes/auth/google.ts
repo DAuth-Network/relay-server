@@ -27,7 +27,7 @@ async function verifyIDToken(idToken: string): Promise<TokenPayload> {
 }
 
 // Mint PKP for verified Google account
-export async function dAuthVerifyToMintHandler(
+export async function googleOAuthVerifyToMintHandler(
 	req: Request<
 		{},
 		AuthMethodVerifyRegistrationResponse,

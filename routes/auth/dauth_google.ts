@@ -77,7 +77,7 @@ export async function dAuthVerifyToMintHandler(
 }
 
 // Fetch PKPs for verified DAuth JWT
-export async function googleOAuthVerifyToFetchPKPsHandler(
+export async function dAuthVerifyToFetchPKPsHandler(
 	req: Request<
 		{},
 		AuthMethodVerifyToFetchResponse,
