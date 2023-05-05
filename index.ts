@@ -62,7 +62,7 @@ import {
 	walletVerifyToFetchPKPsHandler,
 } from "./routes/auth/wallet";
 import config from "./config";
-import { dAuthVerifyToFetchPKPsHandler, dAuthVerifyToMintHandler } from "./routes/auth/dauth_google";
+import { dAuthVerifyToFetchPKPsHandler, dAuthVerifyToMintHandler } from "./routes/auth/dauth";
 
 const app = express();
 
