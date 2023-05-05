@@ -327,13 +327,13 @@ app.post("/store-condition", storeConditionHandler);
 
 // --- Mint PKP for authorized account
 app.post("/auth/google", googleOAuthVerifyToMintHandler);
-app.post("/auth/google_dauth", dAuthVerifyToMintHandler);
+app.post("/auth/dauth", dAuthVerifyToMintHandler);
 app.post("/auth/discord", discordOAuthVerifyToMintHandler);
 app.post("/auth/wallet", walletVerifyToMintHandler);
 
 // --- Fetch PKPs tied to authorized account
 app.post("/auth/google/userinfo", googleOAuthVerifyToFetchPKPsHandler);
-app.post("/auth/google_dauth/userinfo", dAuthVerifyToFetchPKPsHandler);
+app.post("/auth/dauth/userinfo", dAuthVerifyToFetchPKPsHandler);
 
 app.post("/auth/discord/userinfo", discordOAuthVerifyToFetchPKPsHandler);
 app.post("/auth/wallet/userinfo", walletVerifyToFetchPKPsHandler);
