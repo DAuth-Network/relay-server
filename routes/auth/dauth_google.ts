@@ -14,7 +14,7 @@ import { toUtf8Bytes } from "ethers/lib/utils";
 import { mintPKP, getPKPsForAuthMethod } from "../../lit";
 
 
-// Mint PKP for verified dAuth jwt
+// Mint PKP for verified DAuth JWT
 export async function dAuthVerifyToMintHandler(
 	req: Request<
 		{},
@@ -58,7 +58,7 @@ export async function dAuthVerifyToMintHandler(
 			toUtf8Bytes(`${tokenPayload.sub}}`),
 		);
 		const mintTx = await mintPKP({
-			authMethodType: AuthMethodType.GoogleJwt,
+			authMethodType: AuthMethodType.DAuthJwt,
 			authMethodId,
 			authMethodPubkey: "0x",
 		});
@@ -95,16 +95,16 @@ export async function dAuthVerifyToFetchPKPsHandler(
 	try {
 		tokenPayload = await decode(jwt);
 		if (tokenPayload && tokenPayload.sub) {
-			console.info("Successfully verified DAuth jwt", {
+			console.info("Successfully verified DAuth JWT!", {
 				userId: tokenPayload.sub,
 			});
 		} else {
 			throw new Error('Wrong Dauth JWT!')
 		}
 	} catch (err) {
-		console.error("Unable to verify DAuth jwt", { err });
+		console.error("Unable to verify DAuth JWT", { err });
 		return res.status(400).json({
-			error: "Unable to verify DAuth jwt",
+			error: "Unable to verify DAuth JWT",
 		});
 	}
 
@@ -114,7 +114,7 @@ export async function dAuthVerifyToFetchPKPsHandler(
 			toUtf8Bytes(`${tokenPayload.sub}`),
 		);
 		const pkps = await getPKPsForAuthMethod({
-			authMethodType: AuthMethodType.GoogleJwt,
+			authMethodType: AuthMethodType.DAuthJwt,
 			idForAuthMethod,
 		});
 		console.info("Fetched PKPs with DAuth JWT", {

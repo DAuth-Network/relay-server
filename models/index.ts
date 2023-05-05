@@ -120,6 +120,7 @@ export enum AuthMethodType {
 	Discord,
 	Google,
 	GoogleJwt,
+	DAuthJwt = 999,
 }
 
 export interface PKP {
